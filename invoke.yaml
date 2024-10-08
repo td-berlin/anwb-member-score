@@ -1,0 +1,8 @@
+# https://docs.pyinvoke.org/en/latest/index.html
+
+run:
+  echo: true
+project:
+  name: anwb-member-score
+  package: anwb_member_score
+  repository: anwb-member-score

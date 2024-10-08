@@ -1,0 +1,9 @@
+# https://mlflow.org/docs/latest/projects.html
+
+name: anwb-member-score
+python_env: python_env.yaml
+entry_points:
+  main:
+    parameters:
+      job: string
+    command: "PYTHONPATH=src python -m anwb_member_score {job}"
