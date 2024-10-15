@@ -15,7 +15,7 @@ Arguments:
 import pyspark.sql.functions as F
 from docopt import docopt
 from pyspark.sql import SparkSession
-from pyspark.sql.types import *
+from pyspark.sql.types import DateType, FloatType, IntegerType, StructField, StructType
 
 
 def transform_to_rfm(file_path: str) -> None:
