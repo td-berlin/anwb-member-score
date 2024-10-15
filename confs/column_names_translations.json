@@ -1,0 +1,45 @@
+
+{
+    "datasources_columns": {
+        "hashed_klantnummer": "hashed_customer_number",
+        "lidsoort": "membership_type",
+        "hashed_hoofdlid_klantnummer": "hashed_main_customer_number",
+        "leeftijd": "age",
+        "postcode_6p": "postcode",
+        "eerste_verenigingsdatum": "join_date",
+        "lidmaatschapskanaal": "membership_channel",
+        "kaartkleur": "cardcolor",
+        "boekingsdatum": "booking_date",
+        "startdatum": "start_date",
+        "einddatum": "end_date"
+},
+    "column_values": {
+        "cardcolor": {
+            "platina": "platinum",
+            "blauw": "blue",
+            "zilver": "silver",
+            "brons": "bronze",
+            "goud": "gold"},
+        "membership_channel":{
+            "Onbekend": "unknown",
+            "DM/Overig": "dm_other",
+            "Winkels": "shops",
+            "ALC/WW": "alc_ww",
+            "Online": "online",
+            "LSC": "lsc"
+        },
+        "membership_type": {
+            "werkenlid": "working_member", 
+            "partnerlid": "partner_member",
+            "levenslid": "life_member",
+            "exlid": "former_member",
+            "gezinspas partner": "family_pass_partner",
+            "jongerenlid": "youth_member",
+            "gezinspas jongeren": "family_pass_young_partner",
+            "personeelslid": "staff_member",
+            "partner personeelslid": "partner_staff_member"
+        }
+
+    }
+
+}
