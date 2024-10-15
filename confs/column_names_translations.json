@@ -29,7 +29,7 @@
             "LSC": "lsc"
         },
         "membership_type": {
-            "werkenlid": "working_member", 
+            "werkenlid": "working_member",
             "partnerlid": "partner_member",
             "levenslid": "life_member",
             "exlid": "former_member",
@@ -39,7 +39,5 @@
             "personeelslid": "staff_member",
             "partner personeelslid": "partner_staff_member"
         }
-
     }
-
 }
