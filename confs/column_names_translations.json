@@ -22,14 +22,14 @@
             "goud": "gold"},
         "membership_channel":{
             "Onbekend": "unknown",
-            "DM/Overig": "dm_other",
+            "DM/Overig": "other",
             "Winkels": "shops",
             "ALC/WW": "alc_ww",
             "Online": "online",
             "LSC": "lsc"
         },
         "membership_type": {
-            "werkenlid": "working_member",
+            "werkendlid": "working_member",
             "partnerlid": "partner_member",
             "levenslid": "life_member",
             "exlid": "former_member",

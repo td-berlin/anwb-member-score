@@ -1,0 +1,26 @@
+{
+  "CreateCluster": true,
+  "TerminateCluster": true,
+  "ScriptBootstrapActionScript": "s3://anwb-emr-member-score-bootstrap-363106475318-eu-central-1/bootstrap_actions.sh",
+  "LogUri": "s3n://anwb-emr-member-score-logs-363106475318-eu-central-1",
+  "InstancesEc2KeyName": "anwb-cfn",
+  "InstancesEc2SubnetId": "subnet-00a1527db16a12ff4",
+  "JobFlowRole": "EMR_EC2_anwb-emr-member-scoreRole",
+  "ServiceRole": "EMR_anwb-emr-member-scoreRole",
+  "ArgsTranformToRFMSsm": [
+      "spark-submit",
+      "--deploy-mode",
+      "client",
+      "--master",
+      "yarn",
+      "--conf",
+      "spark.serializer=org.apache.spark.serializer.KryoSerializer",
+      "--conf",
+      "spark.sql.broadcastTimeout=3600",
+      "--conf",
+      "spark.sql.adaptive.skewJoin.enabled=true",
+      "--conf",
+      "spark.default.parallelism=20",
+      "s3a://anwb-emr-member-score-work-363106475318-eu-central-1/process/mock_data_transactional_to_rfm.py"
+  ]
+}

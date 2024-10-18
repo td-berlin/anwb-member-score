@@ -1,0 +1,26 @@
+{
+  "CreateCluster": true,
+  "TerminateCluster": true,
+  "ScriptBootstrapActionScript": "s3://{{ bootstrap_bucket }}/bootstrap_actions.sh",
+  "LogUri": "s3n://{{ logs_bucket }}",
+  "InstancesEc2KeyName": "{{ ec2_key_name }}",
+  "InstancesEc2SubnetId": "{{ ec2_subnet_id}}",
+  "JobFlowRole": "{{ emr_ec2_role }}",
+  "ServiceRole": "{{ emr_role }}",
+  "ArgsTranformToRFMSsm": [
+      "spark-submit",
+      "--deploy-mode",
+      "client",
+      "--master",
+      "yarn",
+      "--conf",
+      "spark.serializer=org.apache.spark.serializer.KryoSerializer",
+      "--conf",
+      "spark.sql.broadcastTimeout=3600",
+      "--conf",
+      "spark.sql.adaptive.skewJoin.enabled=true",
+      "--conf",
+      "spark.default.parallelism=20",
+      "s3a://{{ work_bucket }}/process/mock_data_transactional_to_rfm.py"
+  ]
+}
