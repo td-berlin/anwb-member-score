@@ -23,7 +23,7 @@ def main():
     ec2_key_name = args.ec2_key_name
 
     account_id = sts_client.get_caller_identity()["Account"]
-    bucket_name = f"{project_name}-bootstrap-{account_id}-{region}"
+    bucket_name = f"{project_name}-bootstrap-{account_id}-eu-central-1"
     if not create_bucket(bucket_name, project_name):
         logging.error(f"Failed to create or access bucket {bucket_name}")
         sys.exit(1)
@@ -57,11 +57,11 @@ def main():
         sys.exit(1)
 
 
-def create_bucket(bucket_name, project_name):
+def create_bucket(bucket_name):
     """Create an S3 bucket in a specified region"""
     try:
         s3_client.create_bucket(
-            Bucket=bucket_name, CreateBucketConfiguration={"LocationConstraint": region}
+            Bucket=bucket_name, CreateBucketConfiguration={"LocationConstraint": "eu-central-1"}
         )
         logging.info(f"Bucket {bucket_name} created.")
     except ClientError as e:
